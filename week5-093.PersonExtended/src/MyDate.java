@@ -37,8 +37,28 @@ public class MyDate {
      * Copy the method here since it eases this assignment considerably.
      */
     public int differneceInYears(MyDate compared) {
-        return -99;
+        // find out which date is smaller
+        MyDate startDate = compared;
+        MyDate endDate = this;
+        
+        if(earlier(compared)) {
+            startDate = this;
+            endDate = compared;
+        }
+        
+        int difference = 0;
+        
+        if(endDate.month < startDate.month) {
+            // not a complete year
+            difference = 1;
+        }   
+        
+        if(endDate.month == startDate.month) {
+            if(endDate.day < startDate.day) {
+                difference = 1;
+            }
+        }
+        
+        return endDate.year - startDate.year - difference;
     }
-
-  
 }

@@ -8,5 +8,19 @@ public class Main {
         
         // Your program should use only one Scanner object, i.e., it is allowed to call 
         // new Scanner only once. If you need scanner in multiple places, you can pass it as parameter
+        
+        Exam examObject = new Exam();
+        
+        System.out.println("Type exam scores, -1 completes: ");
+        int score = Integer.parseInt(lukija.nextLine());
+        
+        // get all the scores
+        while(score != -1) {
+            examObject.addScore(score);
+            score = Integer.parseInt(lukija.nextLine());
+        }
+        
+        // print all the scores
+        examObject.printScores();
     }
 }

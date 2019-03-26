@@ -12,27 +12,22 @@ import java.util.*;
 
 public class Database {
     
-    private List<Bird> birds;
-    private Map<Bird, Integer> observations;
+    private Map<String, Bird> birds;
+    private Map<String, Integer> observations;
     
     Database() {
-        birds = new ArrayList<Bird>();
-        observations = new HashMap<Bird, Integer>();
+        birds = new HashMap<String, Bird>();
+        observations = new HashMap<String, Integer>();
     }
     
     public Bird searchBirds(String name) {
-        for(Bird bird : birds) {
-            if(bird.getName().equals(name) || bird.getLatinName().equals(name)) {
-                return bird;
-            }
-        }
-        return null;
+        return (birds.containsKey(name)) ? birds.get(name) : null;
     }
     
     public void addBirds(String name, String latinName) {
         // add a bird only if it doesn't exist already
         if(searchBirds(name) == null && searchBirds(latinName) == null) {
-            birds.add(new Bird(name, latinName));
+            birds.put(name, new Bird(name, latinName));
         }
     }
     
@@ -40,7 +35,7 @@ public class Database {
         Bird bird = searchBirds(observation);
         if(bird != null) {
             int counter = observations.getOrDefault(observation, 0);
-            observations.put(bird, ++counter);
+            observations.put(bird.getName(), ++counter);
         }
         else {
             System.out.println("Is not a bird!");
@@ -48,10 +43,19 @@ public class Database {
     }
     
     public void showStatistics() {
-        for(Map.Entry<Bird, Integer> entry : observations.entrySet()) {
-            Bird bird = entry.getKey();
+        for(Map.Entry<String, Bird> entry : birds.entrySet()) {
+            Bird bird = entry.getValue();
             String stats = String.format("%s (%s): %d observations", 
-                    bird.getName(), bird.getLatinName(), entry.getValue());
+                    bird.getName(), bird.getLatinName(), observations.getOrDefault(entry.getKey(), 0));
+            System.out.println(stats);
+        }
+    }
+    
+    public void showBird(String name) {
+        if(birds.containsKey(name)) {
+            Bird bird = birds.get(name);
+            String stats = String.format("%s (%s): %d observations", 
+                    bird.getName(), bird.getLatinName(), observations.getOrDefault(name, 0));
             System.out.println(stats);
         }
     }

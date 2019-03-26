@@ -25,6 +25,11 @@ public class Main {
             if(command.contains("Statistics")) {
                 statisticsCommand(birdWatchers);
             }
+            if(command.contains("Show")) {
+                showCommand(reader, birdWatchers);
+            }
+            System.out.println("? ");
+            command = reader.nextLine();
         }
             
     }
@@ -45,5 +50,11 @@ public class Main {
     
     public static void statisticsCommand(Database birdWatchers) {
         birdWatchers.showStatistics();
+    }
+    
+    public static void showCommand(Scanner reader, Database birdWatchers) {
+        System.out.println("What? ");
+        String name = reader.nextLine();
+        birdWatchers.showBird(name);
     }
 }

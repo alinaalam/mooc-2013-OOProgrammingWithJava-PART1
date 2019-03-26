@@ -42,9 +42,9 @@
 init:
 
 -deps-jar-init:
+   [delete] Deleting: /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/built-jar.properties
 
 deps-jar:
-    [mkdir] Created dir: /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build
 
 -warn-already-built-jar:
 [propertyfile] Updating property file: /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/built-jar.properties
@@ -56,7 +56,6 @@ deps-jar:
 -verify-automatic-build:
 
 -pre-pre-compile:
-    [mkdir] Created dir: /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/classes
 
 -pre-compile:
 
@@ -65,33 +64,22 @@ deps-jar:
 -compile-depend:
 
 -do-compile:
-    [mkdir] Created dir: /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/empty
-    [mkdir] Created dir: /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/generated-sources/ap-source-output
-    [javac] Compiling 3 source files to /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/classes
-    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.6
-    [javac] 1 warning
-     [copy] Copying 1 file to /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/classes
 
 -post-compile:
 
 compile:
 
 -pre-pre-compile-test:
-    [mkdir] Created dir: /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/test/classes
 
 -pre-compile-test:
 
 -compile-test-depend:
 
 -do-compile-test:
-    [javac] Compiling 1 source file to /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/test/classes
-    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.6
-    [javac] 1 warning
-     [copy] Copying 1 file to /Users/alinaalam/NetBeansProjects/mooc-2013-OOProgrammingWithJava-PART1/week6-103.Birdwatcher/build/test/classes
 
 -post-compile-test:
 
 compile-test:
 
 BUILD SUCCESSFUL
-Total time: 2 seconds
+Total time: 0 seconds
